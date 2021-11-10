@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Evaluacion_Final_POO
 {
@@ -22,6 +23,19 @@ namespace Evaluacion_Final_POO
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = Empleados;
+        }
+
+        private void BorrarErrores()
+        {
+            errorProvider1.SetError(txtnombres, "");
+            errorProvider1.SetError(txtapellidos, "");
+            errorProvider1.SetError(txtCorreo, "");
+            errorProvider1.SetError(txtSueldo, "");
+            errorProvider1.SetError(dateTimePicker1, "");
+            errorProvider1.SetError(dateTimePicker2, "");
+            errorProvider1.SetError(mstbxDUI, "");
+            errorProvider1.SetError(mstbxCelular, "");
+
         }
 
         private bool validarCampos() //Pro edimiento para validar campos
@@ -43,11 +57,29 @@ namespace Evaluacion_Final_POO
                 validado = false;
                 errorProvider1.SetError(mstbxDUI, "Ingrese el DUI");
             }
-            if(mstbxCelular.Text == "")
+            if(mstbxCelular.Text == label13.Text)
             {
                 validado = false;
-                errorProvider1.SetError(mstbxCelular, "Ingrese su Tel.Celular");
+                errorProvider1.SetError(mstbxCelular, "Ingrese el Tel.Celular");
             }
+            if (txtCorreo.Text == "")
+            {
+                validado = false;
+                errorProvider1.SetError(txtCorreo, "Ingrese el Correo");
+            }
+            if (txtSueldo.Text == "")
+            {
+                validado = false;
+                errorProvider1.SetError(txtSueldo, "Ingrese el Sueldo");
+            }
+            if(mstbxDUI.Text == label14.Text)
+            {
+                validado = false;
+                errorProvider1.SetError(mstbxDUI, "Ingrese el DUI");
+            }
+
+
+
 
             return validado;
         }
@@ -60,8 +92,8 @@ namespace Evaluacion_Final_POO
             //Aqui va la limpieza del dateTimePicker2
             mstbxDUI.Clear();
             mstbxCelular.Clear();
-            textBox2.Clear();
-            textBox1.Clear();
+            txtCorreo.Clear();
+            txtSueldo.Clear();
             //Aqui va la limpieza del numericUpDown1
             //Aqui va la limpieza del numericUpDown1
             txtnombres.Focus();
@@ -75,7 +107,7 @@ namespace Evaluacion_Final_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            BorrarErrores();
             int ClicksRestantes = (NumEmpleados - 1);
             NumEmpleados = ClicksRestantes;
 
@@ -84,19 +116,25 @@ namespace Evaluacion_Final_POO
                 btnNuevo.Visible = false;
                 btnGuardar.Visible = false;
                 MessageBox.Show("Acaba de agregar los 10 empleados", "Atención");
+                btnActualizar.Visible = true;
 
             }
             else
             {
-
-
                 if (validarCampos())
                 {
+
+                    if(dateTimePicker2.Value.Year > System.DateTime.Now.Year)
+                    {
+                        errorProvider1.SetError(dateTimePicker2, "Fecha Incorrecta");
+                    }
+
                     if (dateTimePicker1.Value.Year > System.DateTime.Now.Year)
                     {
-                        MessageBox.Show("Prueba con un año anterior al presente", "Al parecer vienes del futuro :O");
+                        errorProvider1.SetError(dateTimePicker1, "Introduzca otra fecha");
                         //Application.Restart();
                     }
+
                     if (dateTimePicker1.Value.Year <= 1971 || dateTimePicker1.Value.Year >= 2004)
                     {
                         MessageBox.Show("Solo se aceptan empleados con edades con un intervalo de 18 a 50 años", "Prueba de nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,7 +147,7 @@ namespace Evaluacion_Final_POO
 
                         double procentRent = (double)numericUpDown1.Value;
                         double porcentIss = (double)numericUpDown2.Value;
-                        double salbase = double.Parse(textBox1.Text);
+                        double salbase = double.Parse(txtSueldo.Text);
                         double mrenta = salbase * 0.10;
                         double misss = salbase * 0.03;
                         double tdesc = mrenta + misss;
@@ -161,7 +199,91 @@ namespace Evaluacion_Final_POO
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             btnMostrar.Visible = false;
+            dataGridView1.Visible = false;
+            label13.Text = mstbxCelular.Text;
+            label13.Visible = false;
+            label14.Text = mstbxDUI.Text;
+            label14.Visible = false;
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnGuardar.Visible = true;
+            btnNuevo.Visible = false;
+            groupBox1.Visible = true;
+            groupBox2.Visible = true;
+            txtnombres.Focus();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = true;
+            btnActualizar.Visible = false;
+        }
+
+        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar)) //Tecla de Borrado
+            {
+                e.Handled = false;
+            }
+            else if ((e.KeyChar == '.') && (!txtSueldo.Text.Contains("."))) 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtSueldo, "Solo números");
+
+            }
+        }
+
+        private void txtnombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if(char.IsControl(e.KeyChar)) //Tecla de Borrado
+            {
+                e.Handled = false;
+            }
+            else if(char.IsWhiteSpace(e.KeyChar)) //Tecla de Espacio
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtnombres, "Son Nombres, no Nick's");
+            }
+        }
+
+        private void txtapellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar)) //Tecla de Borrado
+            {
+                e.Handled = false;
+            }
+            else if (char.IsWhiteSpace(e.KeyChar)) //Tecla de Espacio
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtapellidos, "Son apellidos, no Nick's");
+            }
         }
     }
 }

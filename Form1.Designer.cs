@@ -31,7 +31,7 @@ namespace Evaluacion_Final_POO
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.mstbxCelular = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@ namespace Evaluacion_Final_POO
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSueldo = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,6 +62,8 @@ namespace Evaluacion_Final_POO
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -73,7 +75,7 @@ namespace Evaluacion_Final_POO
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.mstbxCelular);
             this.groupBox1.Controls.Add(this.label11);
@@ -94,12 +96,13 @@ namespace Evaluacion_Final_POO
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Básicos";
             // 
-            // textBox2
+            // txtCorreo
             // 
-            this.textBox2.Location = new System.Drawing.Point(194, 254);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 30);
-            this.textBox2.TabIndex = 11;
+            this.txtCorreo.Location = new System.Drawing.Point(194, 254);
+            this.txtCorreo.MaxLength = 20;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(100, 30);
+            this.txtCorreo.TabIndex = 11;
             // 
             // label12
             // 
@@ -172,9 +175,11 @@ namespace Evaluacion_Final_POO
             // 
             this.txtapellidos.Location = new System.Drawing.Point(194, 86);
             this.txtapellidos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtapellidos.MaxLength = 15;
             this.txtapellidos.Name = "txtapellidos";
             this.txtapellidos.Size = new System.Drawing.Size(132, 30);
             this.txtapellidos.TabIndex = 3;
+            this.txtapellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtapellidos_KeyPress);
             // 
             // label2
             // 
@@ -191,9 +196,11 @@ namespace Evaluacion_Final_POO
             // 
             this.txtnombres.Location = new System.Drawing.Point(194, 39);
             this.txtnombres.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtnombres.MaxLength = 15;
             this.txtnombres.Name = "txtnombres";
             this.txtnombres.Size = new System.Drawing.Size(132, 30);
             this.txtnombres.TabIndex = 1;
+            this.txtnombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombres_KeyPress);
             // 
             // label1
             // 
@@ -232,11 +239,12 @@ namespace Evaluacion_Final_POO
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo Empleado";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtSueldo);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -253,6 +261,7 @@ namespace Evaluacion_Final_POO
             // numericUpDown2
             // 
             this.numericUpDown2.DecimalPlaces = 1;
+            this.numericUpDown2.Enabled = false;
             this.numericUpDown2.Increment = new decimal(new int[] {
             1,
             0,
@@ -265,20 +274,28 @@ namespace Evaluacion_Final_POO
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.ReadOnly = true;
             this.numericUpDown2.Size = new System.Drawing.Size(120, 30);
             this.numericUpDown2.TabIndex = 7;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
-            // textBox1
+            // txtSueldo
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 86);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 30);
-            this.textBox1.TabIndex = 6;
+            this.txtSueldo.Location = new System.Drawing.Point(174, 86);
+            this.txtSueldo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSueldo.Name = "txtSueldo";
+            this.txtSueldo.Size = new System.Drawing.Size(132, 30);
+            this.txtSueldo.TabIndex = 6;
+            this.txtSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldo_KeyPress);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.DecimalPlaces = 1;
+            this.numericUpDown1.Enabled = false;
             this.numericUpDown1.Increment = new decimal(new int[] {
             1,
             0,
@@ -291,8 +308,14 @@ namespace Evaluacion_Final_POO
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
             this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -406,8 +429,9 @@ namespace Evaluacion_Final_POO
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(156, 41);
             this.btnActualizar.TabIndex = 9;
-            this.btnActualizar.Text = "Actualizar Datos";
+            this.btnActualizar.Text = "Mostrar Grid";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // dataGridView1
             // 
@@ -418,11 +442,31 @@ namespace Evaluacion_Final_POO
             this.dataGridView1.Size = new System.Drawing.Size(869, 180);
             this.dataGridView1.TabIndex = 10;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(452, 89);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 23);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "label13";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(535, 89);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 23);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "label14";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 662);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnMostrar);
@@ -449,6 +493,7 @@ namespace Evaluacion_Final_POO
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -468,7 +513,7 @@ namespace Evaluacion_Final_POO
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSueldo;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -484,8 +529,10 @@ namespace Evaluacion_Final_POO
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 
