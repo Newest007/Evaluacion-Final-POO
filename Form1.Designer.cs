@@ -60,6 +60,8 @@ namespace Evaluacion_Final_POO
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,6 +73,8 @@ namespace Evaluacion_Final_POO
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.maskedTextBox2);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
@@ -85,7 +89,7 @@ namespace Evaluacion_Final_POO
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(442, 265);
+            this.groupBox1.Size = new System.Drawing.Size(442, 310);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Básicos";
@@ -152,7 +156,7 @@ namespace Evaluacion_Final_POO
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(84, 389);
+            this.button1.Location = new System.Drawing.Point(541, 334);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 41);
             this.button1.TabIndex = 1;
@@ -165,7 +169,7 @@ namespace Evaluacion_Final_POO
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(281, 389);
+            this.button2.Location = new System.Drawing.Point(749, 334);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 41);
             this.button2.TabIndex = 2;
@@ -365,7 +369,7 @@ namespace Evaluacion_Final_POO
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(564, 334);
+            this.button3.Location = new System.Drawing.Point(552, 397);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 41);
             this.button3.TabIndex = 8;
@@ -378,7 +382,7 @@ namespace Evaluacion_Final_POO
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(745, 334);
+            this.button4.Location = new System.Drawing.Point(751, 397);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(156, 41);
             this.button4.TabIndex = 9;
@@ -393,6 +397,24 @@ namespace Evaluacion_Final_POO
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(869, 180);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(49, 257);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(133, 23);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Correo Electronico";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(194, 254);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 30);
+            this.textBox2.TabIndex = 11;
             // 
             // Form1
             // 
@@ -459,6 +481,8 @@ namespace Evaluacion_Final_POO
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label12;
     }
 }
 
