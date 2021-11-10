@@ -11,6 +11,9 @@ namespace Evaluacion_Final_POO
 
         //Atributos
         string nombre;
+        string apellido;
+        DateTime nacimiento;
+        DateTime fcontrato;
         string correo;
         string tel;
         string dui;
@@ -26,6 +29,21 @@ namespace Evaluacion_Final_POO
         {
             get { return nombre; }
             set { nombre = value; }
+        }
+        public string Apellido
+        {
+            get { return apellido; }
+            set { apellido = value; }
+        }
+        public DateTime Naciemiento
+        {
+            get { return nacimiento; }
+            set { nacimiento = value; }
+        }
+        public DateTime Fcontrato
+        {
+            get { return fcontrato; }
+            set { fcontrato = value; }
         }
         public string Correo
         {
