@@ -321,12 +321,12 @@ namespace Evaluacion_Final_POO
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(86, 166);
+            this.label9.Location = new System.Drawing.Point(78, 166);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 23);
+            this.label9.Size = new System.Drawing.Size(78, 23);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Tasa ISS:";
+            this.label9.Text = "Tasa ISSS:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label8

@@ -152,12 +152,12 @@ namespace Evaluacion_Final_POO
                         double misss = salbase * 0.03;
                         double tdesc = mrenta + misss;
 
-                        emp.Nombre = txtnombres.Text;
-                        emp.Mrenta = mrenta;
-                        emp.Misss = misss;
-                        emp.Tdescuentos = tdesc;
-                        emp.Sbase = salbase;
-                        emp.Sneto = salbase - tdesc;
+                        emp.NombreEmpleado = txtnombres.Text;
+                        emp.MontoRenta = mrenta;
+                        emp.MontoIsss = misss;
+                        emp.TotalDescuentos = tdesc;
+                        emp.SueldoBase = salbase;
+                        emp.SueldoNeto = salbase - tdesc;
 
                         if (edit_indice > -1)
                         {

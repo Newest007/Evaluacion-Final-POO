@@ -19,32 +19,32 @@ namespace Evaluacion_Final_POO
 
         //Propiedades de acceso
 
-        public string Nombre
+        public string NombreEmpleado
         {
             get { return nombre; }
             set { nombre = value; }
         }
-        public double Mrenta
+        public double MontoRenta
         {
             get { return mrenta; }
             set { mrenta = value; }
         }
-        public double Misss
+        public double MontoIsss
         {
             get { return misss; }
             set { misss = value; }
         }
-        public double Tdescuentos
+        public double TotalDescuentos
         {
             get { return tdescuentos; }
             set { tdescuentos = value; }
         }
-        public double Sbase
+        public double SueldoBase
         {
             get { return sbase; }
             set { sbase = value; }
         }
-        public double Sneto
+        public double SueldoNeto
         {
             get { return sneto; }
             set { sneto = value; }
