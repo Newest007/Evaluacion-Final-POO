@@ -18,14 +18,8 @@ namespace Evaluacion_Final_POO
 
         private void LlenarGrid() //Procedimiento que va a poner los datos del DataTable al DGV
         {
-            Listaempleado.Rows.Clear();
-            foreach (Empleado emp in Empleados)
-            {
-                Listaempleado.Rows.Add(emp.Nombre, emp.Mrenta, emp.Misss, emp.Tdescuentos, emp.Sbase, emp.Sneto);
-            }
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Listaempleado;
-
+            dataGridView1.DataSource = Empleados;
         }
 
         private void limpiarcampos()
@@ -61,16 +55,10 @@ namespace Evaluacion_Final_POO
             double tdesc = mrenta + misss; 
 
             emp.Nombre = txtnombres.Text;
-            emp.Apellido = txtapellidos.Text;
-            emp.Naciemiento = dateTimePicker1.Value;
-            emp.Dui = maskedTextBox1.Text;
-            emp.Tel = maskedTextBox2.Text;
-            emp.Correo = textBox2.Text;
-            emp.Fcontrato = dateTimePicker2.Value;
-            emp.Sbase = salbase;
             emp.Mrenta = mrenta;
             emp.Misss = misss;
             emp.Tdescuentos = tdesc;
+            emp.Sbase = salbase;
             emp.Sneto = salbase - tdesc;
 
             if (edit_indice > -1)
