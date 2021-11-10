@@ -17,7 +17,7 @@ namespace Evaluacion_Final_POO
         private DataTable Listaempleado = new DataTable(); //Aquí mostraremos la lista en el DGV
         private int edit_indice = -1;
 
-        int NumEmpleados = 10;
+        int NumEmpleados = 5;
 
         private void LlenarGrid() //Procedimiento que va a poner los datos del DataTable al DGV
         {
@@ -220,6 +220,7 @@ namespace Evaluacion_Final_POO
         {
             dataGridView1.Visible = true;
             btnActualizar.Visible = false;
+            btnMostrar.Visible = true;
         }
 
         private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
@@ -284,6 +285,41 @@ namespace Evaluacion_Final_POO
                 e.Handled = true;
                 errorProvider1.SetError(txtapellidos, "Son apellidos, no Nick's");
             }
+        }
+
+        public static bool validarEmail(string email)
+        {
+            string expresion = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a - z]{ 2,4})$";
+
+            if(Regex.IsMatch(email,expresion))
+            {
+                if (Regex.Replace(email, expresion, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        private void txtCorreo_Leave(object sender, EventArgs e)
+        {
+            if (validarEmail(txtCorreo.Text)) { }
+            
+            else
+            {
+                errorProvider1.SetError(txtCorreo, "Direccion de Correo Invalida");
+                txtCorreo.SelectAll();
+                txtCorreo.Focus();
+            }
+            
         }
     }
 }

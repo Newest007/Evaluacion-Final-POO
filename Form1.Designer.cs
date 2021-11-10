@@ -99,10 +99,11 @@ namespace Evaluacion_Final_POO
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(194, 254);
-            this.txtCorreo.MaxLength = 20;
+            this.txtCorreo.MaxLength = 40;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 30);
             this.txtCorreo.TabIndex = 11;
+            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
             // 
             // label12
             // 
