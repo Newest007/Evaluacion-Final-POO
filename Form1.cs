@@ -17,7 +17,7 @@ namespace Evaluacion_Final_POO
         private DataTable Listaempleado = new DataTable(); //Aquí mostraremos la lista en el DGV
         private int edit_indice = -1;
 
-        int NumEmpleados = 5; //Empleados + 1
+        int NumEmpleados = 11; //Empleados + 1
 
         private void LlenarGrid() //Procedimiento que va a poner los datos del DataTable al DGV
         {
