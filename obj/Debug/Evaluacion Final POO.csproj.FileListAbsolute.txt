@@ -7,3 +7,13 @@ C:\Users\Pablo\Desktop\Evaluacion-Final-POO-master\obj\Debug\Evaluacion_Final_PO
 C:\Users\Pablo\Desktop\Evaluacion-Final-POO-master\obj\Debug\Evaluacion Final POO.csproj.GenerateResource.Cache
 C:\Users\Pablo\Desktop\Evaluacion-Final-POO-master\obj\Debug\Evaluacion Final POO.exe
 C:\Users\Pablo\Desktop\Evaluacion-Final-POO-master\obj\Debug\Evaluacion Final POO.pdb
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\bin\Debug\Evaluacion Final POO.exe.config
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\bin\Debug\Evaluacion Final POO.exe
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\bin\Debug\Evaluacion Final POO.pdb
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion Final POO.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion_Final_POO.Form1.resources
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion_Final_POO.Properties.Resources.resources
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion Final POO.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion Final POO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion Final POO.exe
+C:\Users\ASUS\Desktop\Evaluación final, el más reciente\obj\Debug\Evaluacion Final POO.pdb

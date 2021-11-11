@@ -17,7 +17,7 @@ namespace Evaluacion_Final_POO
         private DataTable Listaempleado = new DataTable(); //Aquí mostraremos la lista en el DGV
         private int edit_indice = -1;
 
-        int NumEmpleados = 5;
+        int NumEmpleados = 5; //Empleados + 1
 
         private void LlenarGrid() //Procedimiento que va a poner los datos del DataTable al DGV
         {
@@ -286,10 +286,10 @@ namespace Evaluacion_Final_POO
                 errorProvider1.SetError(txtapellidos, "Son apellidos, no Nick's");
             }
         }
-
+        
         public static bool validarEmail(string email)
         {
-            string expresion = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a - z]{ 2,4})$";
+            string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"; 
 
             if(Regex.IsMatch(email,expresion))
             {
@@ -308,7 +308,7 @@ namespace Evaluacion_Final_POO
             }
 
         }
-
+        
         private void txtCorreo_Leave(object sender, EventArgs e)
         {
             if (validarEmail(txtCorreo.Text)) { }
